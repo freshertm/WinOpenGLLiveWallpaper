@@ -19,6 +19,12 @@
     <Filter Include="GLWindow">
       <UniqueIdentifier>{3fb9cb26-d9d0-40f6-9054-9e01d86e9e8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Earth">
+      <UniqueIdentifier>{360165d3-d420-4623-b227-17ec6da83ffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Earth\GLRender">
+      <UniqueIdentifier>{568b9b27-e15a-4cba-8a06-e6f850c8da62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -39,6 +45,63 @@
     <ClInclude Include="GLWindow.h">
       <Filter>GLWindow</Filter>
     </ClInclude>
+    <ClInclude Include="earth\GLRender\glcamera.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\gllight.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\glmaterial.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\glmodel.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\glrender.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\glshader.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\glshape.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\graphicscene.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\graphicscontext.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\graphicsobject.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\renderable.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\GLRender\scenemodel.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\3dmath.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\color.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\customsphere.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\glstarseffect.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\player.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\sceneobject.h">
+      <Filter>Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="mytypes.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -55,6 +118,54 @@
     </ClCompile>
     <ClCompile Include="GLWindow.cpp">
       <Filter>GLWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glcamera.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\gllight.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glmaterial.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glmodel.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glrender.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glshader.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\glshape.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\graphicscene.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\graphicscontext.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\graphicsobject.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\GLRender\scenemodel.cpp">
+      <Filter>Earth\GLRender</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\3dmath.cpp">
+      <Filter>Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\customsphere.cpp">
+      <Filter>Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\glstarseffect.cpp">
+      <Filter>Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\player.cpp">
+      <Filter>Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\sceneobject.cpp">
+      <Filter>Earth</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

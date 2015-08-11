@@ -35,11 +35,9 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="PropertySheet.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="PropertySheet.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -54,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\work\enc_vc3_wrap\enc_vc3_wrap\vendor\dnxhd_sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>earth/GLRender;earth;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,7 +81,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="desktop.h" />
+    <ClInclude Include="earth\3dmath.h" />
+    <ClInclude Include="earth\color.h" />
+    <ClInclude Include="earth\customsphere.h" />
+    <ClInclude Include="earth\GLRender\glcamera.h" />
+    <ClInclude Include="earth\GLRender\gllight.h" />
+    <ClInclude Include="earth\GLRender\glmaterial.h" />
+    <ClInclude Include="earth\GLRender\glmodel.h" />
+    <ClInclude Include="earth\GLRender\glrender.h" />
+    <ClInclude Include="earth\GLRender\glshader.h" />
+    <ClInclude Include="earth\GLRender\glshape.h" />
+    <ClInclude Include="earth\GLRender\graphicscene.h" />
+    <ClInclude Include="earth\GLRender\graphicscontext.h" />
+    <ClInclude Include="earth\GLRender\graphicsobject.h" />
+    <ClInclude Include="earth\GLRender\renderable.h" />
+    <ClInclude Include="earth\GLRender\scenemodel.h" />
+    <ClInclude Include="earth\glstarseffect.h" />
+    <ClInclude Include="earth\player.h" />
+    <ClInclude Include="earth\sceneobject.h" />
     <ClInclude Include="GLWindow.h" />
+    <ClInclude Include="mytypes.h" />
     <ClInclude Include="overlay.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -91,6 +108,22 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication2.cpp" />
     <ClCompile Include="desktop.cpp" />
+    <ClCompile Include="earth\3dmath.cpp" />
+    <ClCompile Include="earth\customsphere.cpp" />
+    <ClCompile Include="earth\GLRender\glcamera.cpp" />
+    <ClCompile Include="earth\GLRender\gllight.cpp" />
+    <ClCompile Include="earth\GLRender\glmaterial.cpp" />
+    <ClCompile Include="earth\GLRender\glmodel.cpp" />
+    <ClCompile Include="earth\GLRender\glrender.cpp" />
+    <ClCompile Include="earth\GLRender\glshader.cpp" />
+    <ClCompile Include="earth\GLRender\glshape.cpp" />
+    <ClCompile Include="earth\GLRender\graphicscene.cpp" />
+    <ClCompile Include="earth\GLRender\graphicscontext.cpp" />
+    <ClCompile Include="earth\GLRender\graphicsobject.cpp" />
+    <ClCompile Include="earth\GLRender\scenemodel.cpp" />
+    <ClCompile Include="earth\glstarseffect.cpp" />
+    <ClCompile Include="earth\player.cpp" />
+    <ClCompile Include="earth\sceneobject.cpp" />
     <ClCompile Include="GLWindow.cpp" />
     <ClCompile Include="overlay.cpp" />
     <ClCompile Include="stdafx.cpp">
