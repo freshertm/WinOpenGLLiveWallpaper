@@ -5,29 +5,27 @@
 
 #include <stdexcept>
 
-GLWindow *g_instance = NULL;
+GLWindow *g_instance = nullptr;
 
-GLWindow::GLWindow(TCHAR* title, int width, int height, int bits, bool fullscreenflag) : fullscreen(fullscreenflag)
+GLWindow::GLWindow()
 {
     g_instance = this;
-    if (!CreateGLWindow(title, width, height, bits, fullscreenflag))
-        throw std::logic_error("Can't create GL widow");
 }
 
 GLWindow::~GLWindow()
 {
-    g_instance = NULL;
+    g_instance = nullptr;
 }
 
 void GLWindow::init()
 {
-    glShadeModel(GL_SMOOTH);							// Enable Smooth Shading
+    /*glShadeModel(GL_SMOOTH);							// Enable Smooth Shading
     glClearColor(0.0f, 0.0f, 0.0f, 0.5f);				// Black Background
     glClearDepth(1.0f);									// Depth Buffer Setup
     glEnable(GL_DEPTH_TEST);							// Enables Depth Testing
     glDepthFunc(GL_LEQUAL);								// The Type Of Depth Testing To Do
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
-
+    */
     initGL();
 }
 
@@ -48,7 +46,7 @@ void GLWindow::resize(int width, int height)
 }
 void GLWindow::update(bool swap)
 {
-    drawGL();
+    this->drawGL();
     if (swap)
         SwapBuffers(hDC);
 }
@@ -89,7 +87,7 @@ void GLWindow::KillGLWindow()
         hInstance = NULL;   
 }
 
-BOOL GLWindow::CreateGLWindow(TCHAR* title, int width, int height, int bits, bool fullscreenflag)
+BOOL GLWindow::create(TCHAR* title, int width, int height, int bits, bool fullscreenflag)
 {
     GLuint		PixelFormat;			// Holds The Results After Searching For A Match
     WNDCLASS	wc;						// Windows Class Structure
@@ -227,12 +225,16 @@ BOOL GLWindow::CreateGLWindow(TCHAR* title, int width, int height, int bits, boo
         return FALSE;
     }
 
-    //ShowWindow(hWnd, SW_SHOW);						// Show The Window
-    SetForegroundWindow(hWnd);						// Slightly Higher Priority
-    SetFocus(hWnd);									// Sets Keyboard Focus To The Window
+
+    init();
 
     resize(width, height);					// Set Up Our Perspective GL Screen
-    init();
+    
+
+    if (!fullscreen)
+        ShowWindow(hWnd, SW_SHOW);						// Show The Window
+    SetForegroundWindow(hWnd);						// Slightly Higher Priority
+    SetFocus(hWnd);									// Sets Keyboard Focus To The Window
     return TRUE;									// Success
 }
 

@@ -12,6 +12,8 @@
 
 #include "overlay.h"
 
+#include "GLEarth.h"
+
 #define COLORKEY   RGB(8,0,16)
 
 
@@ -130,18 +132,18 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
     //GetDesktopResolution(width, height);
 
     const uint8_t bitDepth = 32;
+    const bool useOverlay = false;
     GLWindow *glWindow = NULL;
-    try {
-        glWindow = new GLWindow(_T("My"), width, height, bitDepth, false);
-    }
-    catch (...)
-    {
-        return FALSE;
-    }  
-
-    DXOverlay *dxOverlay = NULL;
     
-    dxOverlay = new DXOverlay(width, height, COLORKEY);
+    glWindow = new GLEarth();
+    //glWindow = new GLWindow();
+
+
+    glWindow->create(_T("My"), width, height, bitDepth, useOverlay);
+
+    DXOverlay *dxOverlay = nullptr;
+    if (useOverlay)
+        dxOverlay = new DXOverlay(width, height, COLORKEY);
 
     if (dxOverlay)
         SetDesktopColor(COLORKEY);

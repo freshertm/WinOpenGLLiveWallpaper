@@ -29,7 +29,7 @@ void GLRender::init()
 
 void GLRender::resize(int width, int height)
 {
-    glViewport(0,0,width,height);
+    //glViewport(0,0,width,height);
     if (_camera)
         _camera->update(width,height);
 }

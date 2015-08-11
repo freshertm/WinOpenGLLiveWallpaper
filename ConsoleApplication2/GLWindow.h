@@ -5,8 +5,10 @@
 class GLWindow
 {
 public:
-    GLWindow(TCHAR* title, int width, int height, int bits, bool fullscreenflag);
+    GLWindow();
     ~GLWindow();
+
+    BOOL create(TCHAR* title, int width, int height, int bits, bool fullscreenflag);
 
     void init();
     void resize(int width, int height);
@@ -26,7 +28,7 @@ protected:
 
 private:
     void KillGLWindow();
-    BOOL CreateGLWindow(TCHAR* title, int width, int height, int bits, bool fullscreenflag);
+    
 
     static LRESULT s_wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 

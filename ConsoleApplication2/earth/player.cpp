@@ -43,8 +43,11 @@ void Player::createScene(GLRender *render)
 
 
     Bitmap * earthTexture = loadTexture(":/textures/earth");
-    mat.setTexture(*earthTexture);
-    delete earthTexture;
+    if (earthTexture)
+    {
+        mat.setTexture(*earthTexture);
+        delete earthTexture;
+    }
 
     CustomSphere * earth = new CustomSphere(earthRadius,80,80);
     _earth = earth;
@@ -68,8 +71,11 @@ void Player::createScene(GLRender *render)
     moonMaterial.setShininess(10);
 
     Bitmap * moonTexture = loadTexture(":/textures/moon");
-    moonMaterial.setTexture(*moonTexture);
-    delete moonTexture;
+    if (moonTexture)
+    {
+        moonMaterial.setTexture(*moonTexture);
+        delete moonTexture;
+    }
     CustomSphere * moon = new CustomSphere(moonRadius, 10, 10);
     moon->setMaterial(moonMaterial);
     moon->position=vec3(realMoonDistance / realEarthRadius,0,0);
