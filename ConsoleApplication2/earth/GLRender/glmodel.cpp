@@ -4,7 +4,7 @@
 
 GLModel::GLModel(const SceneModel &obj): GraphicsObject()
 {
-    for(uint32_t i =0; i< obj.shapes.size(); ++i)
+   /* for(uint32_t i =0; i< obj.shapes.size(); ++i)
     {
         tinyobj::shape_t shp = obj.shapes[i];
         try {
@@ -15,7 +15,7 @@ GLModel::GLModel(const SceneModel &obj): GraphicsObject()
         {
             qDebug() << "exception during shape loading";
         }
-    }
+    }*/
 }
 
 GLModel::GLModel(const GLModel &model): GraphicsObject(model)
@@ -36,6 +36,6 @@ GLModel::GLModel()
 
 void GLModel::drawGeometry()
 {
-    foreach(GLShape* shape, shapes)
-        shape->render();
+   /* foreach(GLShape* shape, shapes)
+        shape->render();*/
 }

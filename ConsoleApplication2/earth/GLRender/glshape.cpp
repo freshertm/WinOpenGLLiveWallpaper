@@ -4,10 +4,10 @@
 //GLShape::GLShape(tinyobj::shape_t shape): indices(0), vertices(0), normals(0), texcoords(0), indicesCount(0), verticesCount(0), normalsCount(0), texCoordsCount(0)
 GLShape::GLShape() : indices(0), vertices(0), normals(0), texcoords(0), indicesCount(0), verticesCount(0), normalsCount(0), texCoordsCount(0)
 {
-    verticesCount = shape.mesh.positions.size();
+/*    verticesCount = shape.mesh.positions.size();
     if (verticesCount <=0) throw;
     vertices = new GLfloat[verticesCount];
-    memcpy(vertices,&shape.mesh.positions[0], sizeof(float) * verticesCount);
+    memcpy(vertices,&shape.mesh.positions[0], sizeof(float) * verticesCount);*/
    /* for (int i=0; i< verticesCount; ++i)
     {
         qDebug() << "V[" << i<< "] vertices:" << vertices[i] << " shape.positions:" << shape.mesh.positions[i];
@@ -15,7 +15,7 @@ GLShape::GLShape() : indices(0), vertices(0), normals(0), texcoords(0), indicesC
         //vertices[i] = shape.mesh.positions[i];*/
 
 
-    indicesCount = shape.mesh.indices.size();
+  /*  indicesCount = shape.mesh.indices.size();
     if (indicesCount <=0) throw;
     indices = new GLushort[indicesCount];
     //memcpy(indices, &shape.mesh.indices[0], sizeof(GLushort) * indicesCount);
@@ -27,10 +27,10 @@ GLShape::GLShape() : indices(0), vertices(0), normals(0), texcoords(0), indicesC
     if (normalsCount > 0)
     {
         normals = new GLfloat[normalsCount];
-        memcpy(normals,&shape.mesh.normals[0],normalsCount * sizeof (float) );
+        memcpy(normals,&shape.mesh.normals[0],normalsCount * sizeof (float) );*/
         /*for (int i=0; i< normalsCount; ++i)
             normals[i] = shape.mesh.normals[i];*/
-    }
+  //  }
 
   /*  texCoordsCount = shape.mesh.texcoords.size();
     if (texCoordsCount > 0)
@@ -42,7 +42,7 @@ GLShape::GLShape() : indices(0), vertices(0), normals(0), texcoords(0), indicesC
 
 GLShape::GLShape(const GLShape &shape)
 {
-    verticesCount = shape.verticesCount;
+   /* verticesCount = shape.verticesCount;
     vertices = new GLfloat[verticesCount];
     memcpy(vertices,shape.vertices,verticesCount * sizeof(GLfloat));
 
@@ -60,19 +60,19 @@ GLShape::GLShape(const GLShape &shape)
     if (texCoordsCount){
         texcoords = new GLfloat[texCoordsCount];
         memcpy(texcoords,shape.texcoords,texCoordsCount * sizeof(GLfloat));
-    }
+    }*/
 }
 
 GLShape::~GLShape()
 {
-    delete[] vertices;
+    /*delete[] vertices;
     delete[] indices;
 
     if (normalsCount)
         delete[] normals;
 
     if (texCoordsCount)
-        delete[] texcoords;
+        delete[] texcoords;*/
 }
 
 /*void GLShape::render()
@@ -85,7 +85,7 @@ GLShape::~GLShape()
 
 void GLShape::render()
 {
-    if (normalsCount>0)
+  /*  if (normalsCount>0)
     {
         glEnableClientState(GL_NORMAL_ARRAY);
         glNormalPointer(GL_FLOAT,0,normals);
@@ -95,14 +95,14 @@ void GLShape::render()
 
 
     glEnableClientState(GL_VERTEX_ARRAY);
-    glVertexPointer(3, GL_FLOAT, 0, vertices);
+    glVertexPointer(3, GL_FLOAT, 0, vertices);*/
 
     /*glEnableClientState(GL_INDEX_ARRAY);
     glIndexPointer(GL_INT,0,indices);
 */
 
 
-    if (texCoordsCount>0)
+   /* if (texCoordsCount>0)
     {
         glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         glTexCoordPointer(texCoordsCount,GL_FLOAT,0,texcoords);
@@ -116,6 +116,6 @@ void GLShape::render()
     if (normalsCount>0) glDisableClientState(GL_NORMAL_ARRAY);
     else glDisable(GL_AUTO_NORMAL);
 
-    if (texCoordsCount>0) glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    if (texCoordsCount>0) glDisableClientState(GL_TEXTURE_COORD_ARRAY);*/
 
 }

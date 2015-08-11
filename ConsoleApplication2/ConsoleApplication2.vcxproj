@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>earth/GLRender;earth;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>earth/sky;earth/GLRender;earth;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -99,6 +99,9 @@
     <ClInclude Include="earth\glstarseffect.h" />
     <ClInclude Include="earth\player.h" />
     <ClInclude Include="earth\sceneobject.h" />
+    <ClInclude Include="earth\sky\skymodel.h" />
+    <ClInclude Include="earth\sky\skyshader.h" />
+    <ClInclude Include="GLEarth.h" />
     <ClInclude Include="GLWindow.h" />
     <ClInclude Include="mytypes.h" />
     <ClInclude Include="overlay.h" />
@@ -124,6 +127,9 @@
     <ClCompile Include="earth\glstarseffect.cpp" />
     <ClCompile Include="earth\player.cpp" />
     <ClCompile Include="earth\sceneobject.cpp" />
+    <ClCompile Include="earth\sky\skymodel.cpp" />
+    <ClCompile Include="earth\sky\skyshader.cpp" />
+    <ClCompile Include="GLEarth.cpp" />
     <ClCompile Include="GLWindow.cpp" />
     <ClCompile Include="overlay.cpp" />
     <ClCompile Include="stdafx.cpp">

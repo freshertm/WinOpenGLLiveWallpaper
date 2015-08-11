@@ -25,6 +25,9 @@
     <Filter Include="Earth\GLRender">
       <UniqueIdentifier>{568b9b27-e15a-4cba-8a06-e6f850c8da62}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Earth\Sky">
+      <UniqueIdentifier>{8a58b257-aee8-4745-9924-0fa94e02de49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -102,6 +105,15 @@
     <ClInclude Include="mytypes.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="earth\sky\skymodel.h">
+      <Filter>Earth\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="earth\sky\skyshader.h">
+      <Filter>Earth\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="GLEarth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -166,6 +178,15 @@
     </ClCompile>
     <ClCompile Include="earth\sceneobject.cpp">
       <Filter>Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\sky\skymodel.cpp">
+      <Filter>Earth\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="earth\sky\skyshader.cpp">
+      <Filter>Earth\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="GLEarth.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

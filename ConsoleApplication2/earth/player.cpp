@@ -293,6 +293,7 @@ Bitmap *Player::loadTexture(const char *filename)
     tex->data = new unsigned char[length];
     memcpy(tex->data, converted.bits(), length);
     return tex;*/
+    return nullptr;
 }
 
 const float camSpeed = 1; //градусов в сеукнду.

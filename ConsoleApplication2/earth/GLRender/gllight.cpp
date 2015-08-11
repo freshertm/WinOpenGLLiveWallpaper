@@ -1,5 +1,5 @@
 #include "gllight.h"
-#include <qgl.h>
+#include "common.h"
 
 GLLight::GLLight(): _changed(1), _ambient(0,0,0,1), _diffuse(1,1,1,1),
     _specular(1,1,1,1), _position(0,0,0), _spotDirection(0,0,-1), _spotCutoff(180.0),

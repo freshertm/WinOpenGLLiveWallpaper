@@ -1,6 +1,5 @@
 #include "glcamera.h"
-#include <qgl.h>
-#include <GL/glu.h>
+#include "common.h"
 
 GLCamera::GLCamera(): _isChanged(true), _width(1), _height(1),_up(0,1,0)
 {

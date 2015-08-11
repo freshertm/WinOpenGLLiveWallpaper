@@ -18,7 +18,7 @@ public:
     float attOutFactor();
 
 protected:
-    virtual void bindShader(QGLShaderProgram &shader, const GraphicsContext& context);
+    //virtual void bindShader(QGLShaderProgram &shader, const GraphicsContext& context);
     virtual void drawGeometry();
 
 private:

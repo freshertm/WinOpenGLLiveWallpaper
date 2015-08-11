@@ -1,6 +1,6 @@
 #include "skymodel.h"
 #include "graphicscontext.h"
-#include <qgl.h>
+#include "common.h"
 
 SkyModel::SkyModel(float skyRadius, float earthRadius, int stack_slices):
     CustomSphere(skyRadius, stack_slices, stack_slices),
@@ -8,20 +8,20 @@ SkyModel::SkyModel(float skyRadius, float earthRadius, int stack_slices):
 {
     _range = sqrt(skyRadius * skyRadius - earthRadius * earthRadius) / skyRadius;
 
-    QGLShaderProgram * skyShader = new QGLShaderProgram();
+    //QGLShaderProgram * skyShader = new QGLShaderProgram();
 
-    skyShader->bind();
-    qDebug() << "vert: " << skyShader->addShaderFromSourceFile(QGLShader::Vertex, ":/shaders/sky.vert");
+    //skyShader->bind();
+   /* qDebug() << "vert: " << skyShader->addShaderFromSourceFile(QGLShader::Vertex, ":/shaders/sky.vert");
     qDebug() << "frag: " << skyShader->addShaderFromSourceFile(QGLShader::Fragment, ":/shaders/sky.frag");
-    qDebug() << "link: " << skyShader->link();
-    _rangeId = skyShader->uniformLocation("range");
+    qDebug() << "link: " << skyShader->link();*/
+    /*_rangeId = skyShader->uniformLocation("range");
     _attInId = skyShader->uniformLocation("attInFactor");
     _attOutId = skyShader->uniformLocation("attOutFactor");
     _camId = skyShader->uniformLocation("cameraPosition");
     _reflId = skyShader->uniformLocation("reflectAttShift");
-    skyShader->release();
+    skyShader->release();*/
 
-    setShader(skyShader);
+    //setShader(skyShader);
 }
 
 void SkyModel::setAttInFactor(float attFactor)
@@ -55,7 +55,7 @@ float SkyModel::attInFactor()
 {
     return _attInFactor;
 }
-
+/*
 void SkyModel::bindShader(QGLShaderProgram &shader, const GraphicsContext &context)
 {
     shader.bind();
@@ -65,7 +65,7 @@ void SkyModel::bindShader(QGLShaderProgram &shader, const GraphicsContext &conte
     shader.setUniformValue(_attInId, _attInFactor);
     shader.setUniformValue(_attOutId, _attOutFactor);
     shader.setUniformValue(_reflId, _reflAttShift);
-}
+}*/
 
 void SkyModel::drawGeometry()
 {

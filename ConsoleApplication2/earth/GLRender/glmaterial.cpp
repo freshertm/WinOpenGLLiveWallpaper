@@ -1,6 +1,5 @@
 #include "glmaterial.h"
-#include <qgl.h>
-#include <GL/glu.h>
+#include "common.h"
 
 GLMaterial::GLMaterial(): _diffuse(Color4(0.8f, 0.8f, 0.8f, 1.0f)),
                         _ambient(  Color4(0.2f, 0.2f, 0.2f, 1.0f)),

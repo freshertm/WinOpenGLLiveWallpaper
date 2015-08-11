@@ -53,88 +53,6 @@ TCHAR       oldWallpaperPath[MAX_PATH];
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// Declaration For WndProc
 
 
-void makeScreenShot(char* fname_part, int width, int height)
-{
-    uint32_t buflen = width * height * 4;
-    uint8_t *buf = new uint8_t[buflen];
-
-    RECT r;
-    r.top = 0;
-    r.left = 0;
-    r.right = width;
-    r.bottom = height;
-    HBITMAP bmp = CreateCompatibleBitmap(hDC, r.right, r.bottom);
-    HDC mem = CreateCompatibleDC(hDC);
-
-
-    HBITMAP old = (HBITMAP)SelectObject(mem, bmp);
-
-    // Copy the bits from the screen to our DC (and our BMP that's selected into it.
-    BitBlt(mem, 0, 0, r.right, r.bottom, hDC, 0, 0, SRCCOPY | CAPTUREBLT);
-
-    GetBitmapBits(bmp, buflen, buf);
-
-    /*
-    BITMAP bmpCapt;
-    GetObject(bmp, sizeof(BITMAP), &bmpCapt);
-
-    BITMAPINFOHEADER bi;
-    ZeroMemory(&bi, sizeof(bi));
-    bi.biSize = sizeof(BITMAPINFOHEADER);
-    bi.biWidth = width;
-    bi.biHeight = height;
-    bi.biPlanes = 1;
-    bi.biBitCount = 32;
-    bi.biCompression = BI_RGB;
-    bi.biSizeImage = 0;
-    bi.biXPelsPerMeter = 0;
-    bi.biYPelsPerMeter = 0;
-    bi.biClrUsed = 0;
-    bi.biClrImportant = 0;
-
-    
-    
-
-    GetDIBits(mem, bmp, 0, height, buf, (LPBITMAPINFO)&bi, DIB_RGB_COLORS);
-    DWORD er = GetLastError();
-    */
-    char fname[2048] = { 0 };
-
-    sprintf(fname, "D:\\%s -w %d -h %d -cs BGR4.raw",fname_part, width, height);
-
-    FILE* f = fopen(fname, "wb");
-    fwrite(buf, buflen, 1, f);
-
-    fclose(f);
-
-    delete[] buf;
-}
-
-
-void saveBitmap(char* path)
-{
-    FILE* f = fopen(path, "wb");
-    BITMAPFILEHEADER hdr;
-
-
-    PBITMAPINFOHEADER pbih;     // bitmap info-header  
-
-    hdr.bfType = 0x4d42;        // 0x42 = "B" 0x4d = "M"  
-    // Compute the size of the entire file.  
-    hdr.bfSize = (DWORD)(sizeof(BITMAPFILEHEADER) +
-        pbih->biSize + pbih->biClrUsed
-        * sizeof(RGBQUAD) + pbih->biSizeImage);
-    hdr.bfReserved1 = 0;
-    hdr.bfReserved2 = 0;
-
-    hdr.bfOffBits = (DWORD) sizeof(BITMAPFILEHEADER) +
-        pbih->biSize + pbih->biClrUsed
-        * sizeof(RGBQUAD);
-
-}
-
-
-
 void mainLoop(GLWindow * win, DXOverlay *ovl)
 {
     MSG		msg;									// Windows Message Structure
@@ -142,11 +60,7 @@ void mainLoop(GLWindow * win, DXOverlay *ovl)
 
     DWORD ticks = GetTickCount();
 
-    char fname[1024];
-
-    sprintf(fname, "D:\\gl -w %d -h %d -cs BGR4.raw", win->width(), win->height());
-
-    FILE* f = fopen(fname, "wb");
+    char fname[1024];   
 
     UINT32 buflen = win->width() * win->height() * 4;
     UINT8 *buf = new UINT8[buflen];
