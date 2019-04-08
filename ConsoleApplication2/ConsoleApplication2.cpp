@@ -14,6 +14,8 @@
 
 #include "GLEarth.h"
 
+#include "glWrap.h"
+
 #define COLORKEY   RGB(8,0,16)
 
 

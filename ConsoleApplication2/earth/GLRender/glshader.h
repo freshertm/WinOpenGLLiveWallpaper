@@ -9,8 +9,8 @@ class GLShader
 public:
     GLShader();
 
-    bool attachVertexProgram(std::string programText);
-    bool attachFragmentProgram(std::string programText);
+    bool attachVertexProgram(const std::string &programText);
+    bool attachFragmentProgram(const std::string &programText);
     bool linkProgram();
 
     void bind();

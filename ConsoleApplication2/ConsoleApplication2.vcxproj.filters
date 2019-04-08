@@ -114,6 +114,9 @@
     <ClInclude Include="GLEarth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="glWrap.h">
+      <Filter>Earth\GLRender</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -187,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="GLEarth.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glwrap.cpp">
+      <Filter>Earth\GLRender</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
